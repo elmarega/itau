@@ -1,7 +1,6 @@
 import { DataService } from './../../services/dataService/data.service';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { dataServiceStub } from 'src/app/stubServices/dataService-stub';
 
 import { ModalEditComponent } from './modal-edit.component';
