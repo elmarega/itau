@@ -1,0 +1,72 @@
+<button
+  class="button_add btn btn-secondary"
+  [ngClass]="{ button_add_disabled: !add }"
+  (click)="add = !add"
+>
+  Adicionar novo vendedor!
+</button>
+<ng-container *ngIf="add">
+  <form [formGroup]="form" (ngSubmit)="sendData()">
+    <tr class="add_container">
+      <td>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Nome</span>
+          </div>
+          <input
+            formControlName="name"
+            type="text"
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">2021</span>
+          </div>
+          <input
+            formControlName="year1"
+            type="number"
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">2022</span>
+          </div>
+          <input
+            formControlName="year2"
+            type="number"
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </td>
+      <td>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">2023</span>
+          </div>
+          <input
+            formControlName="year3"
+            type="number"
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </td>
+      <td>
+        <button class="btn btn-secondary">confirmar</button>
+      </td>
+    </tr>
+  </form>
+</ng-container>

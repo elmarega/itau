@@ -1,0 +1,45 @@
+<div class="container">
+  <ng-container *ngIf="data$ | async as data">
+    <apx-chart
+      [series]="data.series"
+      [chart]="data.chart"
+      [title]="data.title"
+      [xaxis]="data.xaxis"
+    ></apx-chart>
+    <section>
+      <div class="flex-centered">
+        <span>Alterar tipo de gráfico</span>
+      </div>
+      <div class="btn-group btn-group-toggle buttons" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input
+            (click)="changeChartType('bar')"
+            type="radio"
+            name="options"
+            id="option1"
+            checked
+          />
+          Barra
+        </label>
+        <label class="btn btn-secondary">
+          <input
+            (click)="changeChartType('area')"
+            type="radio"
+            name="options"
+            id="option2"
+          />
+          Área
+        </label>
+        <label class="btn btn-secondary">
+          <input
+            (click)="changeChartType('radar')"
+            type="radio"
+            name="options"
+            id="option3"
+          />
+          Radar
+        </label>
+      </div>
+    </section>
+  </ng-container>
+</div>

@@ -1,0 +1,16 @@
+:host {
+
+    .add_container {
+        display: flex; 
+        gap: 1rem;
+        margin: 1rem
+    }
+
+    .button_add {
+        margin-left: 1rem;
+    }
+
+    .button_add_disabled {
+        margin-bottom: 1rem;
+    }
+}

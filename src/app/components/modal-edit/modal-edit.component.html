@@ -1,0 +1,78 @@
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" *ngIf="dataEdit" id="staticBackdropLabel">
+          Alterar dados de {{ dataEdit.name }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <ng-container *ngIf="dataEdit">
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Nome</span>
+              </div>
+              <input
+                formControlName="name"
+                type="text"
+                class="form-control"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <ng-container *ngFor="let year of dataEdit.data; let index = index">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">{{
+                    2021 + index
+                  }}</span>
+                </div>
+                <input
+                  [formControlName]="'year' + (index + 1)"
+                  type="number"
+                  class="form-control"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </ng-container>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                (click)="onSubmit()"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Editar
+              </button>
+            </div>
+          </form>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

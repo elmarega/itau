@@ -1,0 +1,43 @@
+<div class="container">
+  <app-add-data></app-add-data>
+  <ng-container *ngIf="data$ | async as data">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Vendedor</th>
+          <th scope="col" *ngFor="let ano of data.xaxis.categories">
+            {{ ano }}
+          </th>
+          <th>Editar</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data.series; let i = index">
+          <td>{{ item.name }}</td>
+          <td *ngFor="let value of item.data">{{ value }}</td>
+          <td>
+            <button
+              (click)="dataEdit = item; dataIndex = i"
+              data-toggle="modal"
+              data-target="#staticBackdrop"
+              type="button"
+              class="btn btn-warning bi bi-pencil-square"
+            ></button>
+          </td>
+          <td>
+            <button
+              (click)="dataEdit = item; dataIndex = i"
+              data-toggle="modal"
+              data-target="#confirmModal"
+              type="button"
+              class="btn btn-danger bi bi-trash"
+            ></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>
+<app-modal-edit [dataEdit]="dataEdit" [dataIndex]="dataIndex"></app-modal-edit>
+<app-modal-delete [data]="dataEdit" [index]="dataIndex"></app-modal-delete>
