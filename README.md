@@ -2,7 +2,7 @@
 
 Conteúdo do projeto
 * Lista de vendedores com suas vendas anuais.
-* 3 tipos de gráficos utilizando a lib ![ng-apexchart](https://apexcharts.com/docs/installation/) podendo ser escolhidos por um radio button.
+* 3 tipos de gráficos utilizando a lib [ng-apexchart](https://apexcharts.com/docs/installation/) podendo ser escolhidos por um radio button.
 * Tabela com a possibilidade de adição ou alterações que afetam o gráfico simultaneamente.
 
 ## Development server
