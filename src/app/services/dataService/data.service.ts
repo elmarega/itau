@@ -42,7 +42,7 @@ export class DataService {
   getApiData() {
     this.serviceHttpService.getData().subscribe(
       (data) => this.addData(data),
-      (error) => this.addData(this.dataStatic)
+      (error) => this.addData(this.dataStatic) //dataStatic usado somente para caso a Key da API de erro.
     );
   }
 
