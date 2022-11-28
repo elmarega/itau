@@ -1,7 +1,8 @@
 # Itau
 
 Conteúdo do projeto
-* 3 tipos de gráficos podendo ser escolhidos por um radio button.
+* Lista de vendedores com suas vendas anuais.
+* 3 tipos de gráficos utilizando a lib ![ng-apexchart](https://apexcharts.com/docs/installation/) podendo ser escolhidos por um radio button.
 * Tabela com a possibilidade de adição ou alterações que afetam o gráfico simultaneamente.
 
 ## Development server
